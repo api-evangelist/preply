@@ -1,0 +1,16 @@
+{
+  "provider": "preply",
+  "sources": [
+    "preply-chatgpt-openapi-api-openapi.yml"
+  ],
+  "outputs": [
+    "preply-chatgpt-openapi-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "preply-chatgpt-openapi-api-openapi.yml: dangling $ref: #/components/schemas/MultiLanguage"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

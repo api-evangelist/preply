@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/preply-openapi-original.json
+notes: >-
+  Entity graph derived from the Preply ChatGPT-plugin OpenAPI response schemas
+  (tutorsResponse, tutorByIDResponse).
+entities:
+- name: Tutor
+  description: A language tutor listed on the Preply marketplace.
+  key_fields:
+  - id
+  - fullName
+  - averageScore
+  - totalLessons
+  - publicUrl
+  nested:
+  - countryOfBirth
+  - price
+  - user
+- name: Price
+  description: Per-hour price for a tutor.
+  key_fields:
+  - value
+  nested:
+  - currency
+- name: Currency
+  description: Currency of a tutor price.
+  key_fields:
+  - code
+- name: User
+  description: The user/profile behind a tutor listing.
+  key_fields:
+  - fullName
+  nested:
+  - profile
+relationships:
+- from: Tutor
+  to: Price
+  kind: has_one
+  via: price
+- from: Tutor
+  to: User
+  kind: has_one
+  via: user
+- from: Price
+  to: Currency
+  kind: has_one
+  via: currency

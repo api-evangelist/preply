@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://status.preply.com
+notes: >-
+  Preply publishes a public status page covering Website, Blog, Chat, Payments
+  and the Tutor Community Forum. No formal API versioning or deprecation policy
+  is published for the public ChatGPT-plugin API (labelled v1).
+versioning:
+  scheme: label
+  current: v1
+status_page: https://status.preply.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+deprecated_operations: []

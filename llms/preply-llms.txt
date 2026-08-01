@@ -1,0 +1,26 @@
+# Preply
+
+> Preply is a global online language-learning marketplace connecting learners with private tutors across many languages. Preply publishes a small public, unauthenticated ChatGPT-plugin API for searching tutors, plus an enterprise Preply Business offering with SSO, automated provisioning and LMS integrations.
+
+## API
+
+- [Preply plugin OpenAPI](https://preply.com/openapi.yaml): Public read-only tutor-search API (2 GET operations, no auth). Base: https://preply.com/api/chatgpt_openapi/
+- [ai-plugin.json](https://preply.com/.well-known/ai-plugin.json): OpenAI plugin manifest
+
+## Docs
+
+- [Website](https://preply.com)
+- [Preply Business](https://preply.com/en/business): Enterprise plans with SSO, provisioning and LMS integrations
+- [Help Center](https://help.preply.com/en/)
+- [Blog](https://preply.com/en/blog/)
+- [Status](https://status.preply.com)
+
+## Legal
+
+- [Legal Center](https://preply.com/en/legal)
+- [Terms of Service](https://termsofuse.preply.com/terms_of_use/en_TermsOfService.pdf)
+- [Privacy Policy](https://termsofuse.preply.com/terms_of_use/en_PrivacyPolicy.pdf)
+
+## Security
+
+- [security.txt](https://preply.com/.well-known/security.txt): Private bug bounty on Bugcrowd; security@preply.com

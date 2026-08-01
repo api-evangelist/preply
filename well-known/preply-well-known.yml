@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of https://preply.com/.well-known/
+host: https://preply.com
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  file: preply-security.txt
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 200
+  file: preply-ai-plugin.json
+- path: /.well-known/api-catalog
+  status: 404

@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/preply-openapi-original.json
+format: envelope
+notes: >-
+  The Preply ChatGPT-plugin API does not define 4xx/5xx responses or RFC 9457
+  problem+json. Errors are returned inside the 200 response envelope as an
+  `errors` array of human-readable strings. This catalog documents that envelope.
+envelope:
+  field: errors
+  type: array
+  items: string
+  description: List of human-readable error messages that occurred during the request.
+problems: []

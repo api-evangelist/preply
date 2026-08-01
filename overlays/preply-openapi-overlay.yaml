@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Preply plugin API
+  version: 1.0.0
+extends: openapi/preply-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: preply
+    x-apievangelist-surface: chatgpt-plugin
+    x-apievangelist-auth: none
+    x-apievangelist-notes: >-
+      Public read-only tutor-search API originally published as an OpenAI plugin.
+      Two GET operations; results paginate 10 per page; errors surface in an
+      `errors` string array inside the 200 envelope.
+- target: $.paths['/api/chatgpt_openapi/tutors/'].get
+  update:
+    tags:
+    - Tutors
+- target: $.paths['/api/chatgpt_openapi/tutors/{id}'].get
+  update:
+    tags:
+    - Tutors

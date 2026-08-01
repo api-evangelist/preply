@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/preply-openapi-original.json
+notes: >-
+  Cross-cutting request/response semantics for the public Preply ChatGPT-plugin
+  API. Derived from the OpenAPI; the surface is a small read-only search API.
+authentication:
+  style: none
+  detail: The public plugin API declares no security scheme; requests are unauthenticated.
+pagination:
+  style: page-number
+  params:
+  - page
+  page_size: 10
+  detail: Results are split into fixed pages of 10; pass page=2, page=3, ... for more.
+  response_fields:
+  - data.allTutors.totalResults
+idempotency:
+  supported: false
+  detail: All operations are HTTP GET (safe/read-only); no idempotency key contract.
+error_envelope:
+  style: envelope-errors-array
+  field: errors
+  detail: >-
+    Responses carry an `errors` array of human-readable strings alongside `data`;
+    the API does not use RFC 9457 application/problem+json.
+versioning:
+  scheme: label
+  current: v1
+rate_limiting:
+  documented: false
+cross_links:
+  errors: errors/preply-problem-types.yml
+  authentication: null
+  lifecycle: lifecycle/preply-lifecycle.yml

@@ -1,8 +1,16 @@
 aid: preply
 name: Preply
-description: Preply is a company surfaced as a portfolio company of point-nine, techstars and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Preply is a global online language-learning marketplace that connects learners
+  with private tutors across dozens of languages, offering one-on-one video
+  lessons, flexible scheduling and a satisfaction-backed tutor-replacement
+  guarantee. Alongside its consumer marketplace, Preply runs Preply Business, an
+  enterprise language-training offering with SSO, automated user provisioning and
+  LMS integrations. Preply exposes a small public, unauthenticated tutor-search
+  API (originally published as an OpenAI/ChatGPT plugin) that lets applications
+  and agents search tutors by subject, price, availability and language and fetch
+  individual tutor profiles. This profile was enriched by the API Evangelist
+  pipeline from Preply's public surface.
 url: https://raw.githubusercontent.com/api-evangelist/preply/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,17 +19,86 @@ x-backed-by:
 - techstars
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://static.preply.com/ds/icons/favicon-ua.ico
 tags:
 - Company
-apis: []
+- Education
+- Language Learning
+- Tutoring
+- Marketplace
+- EdTech
+- Search
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: preply:preply-chatgpt-openapi-api
+  name: Preply Chatgpt Openapi API
+  description: The Chatgpt Openapi API from Preply — 2 operation(s) for chatgpt openapi.
+  humanURL: https://preply.com
+  baseURL: https://preply.com/api/chatgpt_openapi
+  tags:
+  - Chatgpt Openapi
+  properties:
+  - type: OpenAPI
+    url: openapi/preply-chatgpt-openapi-api-openapi.yml
+  - type: DataModel
+    url: data-model/preply-data-model.yml
+  - type: ErrorCatalog
+    url: errors/preply-problem-types.yml
+  - type: Conventions
+    url: conventions/preply-conventions.yml
 common:
 - type: Website
   url: https://preply.com
+- type: Blog
+  url: https://preply.com/en/blog/
+- type: Support
+  url: https://help.preply.com/en/
+- type: StatusPage
+  url: https://status.preply.com
+- type: TermsOfService
+  url: https://termsofuse.preply.com/terms_of_use/en_TermsOfService.pdf
+- type: PrivacyPolicy
+  url: https://termsofuse.preply.com/terms_of_use/en_PrivacyPolicy.pdf
+- type: MCPServer
+  url: mcp/preply-mcp.yml
+- type: LLMsTxt
+  url: llms/preply-llms.txt
+- type: WellKnown
+  url: well-known/preply-well-known.yml
+- type: SecurityTxt
+  url: well-known/preply-security.txt
+- type: Conformance
+  url: conformance/preply-conformance.yml
+- type: Lifecycle
+  url: lifecycle/preply-lifecycle.yml
+- type: AgenticAccess
+  url: agentic-access/preply-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/preply-vulnerability-disclosure.yml
+- type: Security
+  url: https://preply.com/.well-known/security.txt
+- type: DomainSecurity
+  url: security/preply-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

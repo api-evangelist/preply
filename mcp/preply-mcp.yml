@@ -1,0 +1,18 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/preply-openapi-original.json
+notes: >-
+  No official hosted/remote MCP server was found for Preply. This is a candidate
+  tool list derived from the public Preply ChatGPT-plugin OpenAPI (2 read-only
+  operations, no authentication).
+server:
+  name: preply
+  transport: http
+tools:
+- name: search_tutors
+  description: Search the Preply tutor marketplace by subject, price, availability, language and more.
+  source_operation: openapi/preply-openapi-original.json#searching-tutors
+- name: get_tutor
+  description: Get full details for a specific tutor by id.
+  source_operation: openapi/preply-openapi-original.json#tutor-by-id
