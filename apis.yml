@@ -65,6 +65,10 @@ apis:
   - type: Conventions
     url: conventions/preply-conventions.yml
 common:
+- type: AgentSkill
+  url: skills/preply-find-a-tutor.md
+- type: Overlay
+  url: overlays/preply-openapi-overlay.yaml
 - type: Website
   url: https://preply.com
 - type: Blog
