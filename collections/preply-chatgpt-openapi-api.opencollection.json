@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Preply plugin Chatgpt Openapi API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chatgpt Openapi",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get full info about specific tutor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://preply.com/api/chatgpt_openapi/tutors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the tutor"
+              }
+            ]
+          },
+          "docs": "Get full info about specific tutor"
+        },
+        {
+          "info": {
+            "name": "Get a list of tutors. Results are split into pages, which size is 10. If not tutors are returned suggest removing some used filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://preply.com/api/chatgpt_openapi/tutors/",
+            "params": [
+              {
+                "name": "subject",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by subject. Possible options are 'english', 'spanish', 'ukrainian"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "The way to sort tutors. Possible options are 'price_highest' (expensive tutors go first), 'price_lowest' (cheap tutors go first), 'popularity' (popular tutors go first), 'reviews' (tutors with the most reviews go first), 'rating' (tutors with the highest lessons rating go first). The 'rating' value is often used to find the best tutors, thus is recommended."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number of the results. Default value is \"1\". To get more tutors for the same result pass \"2\" or \"3\" and so on"
+              },
+              {
+                "name": "priceRange",
+                "value": "",
+                "type": "query",
+                "description": "Price range filter for tutors. The format is \"minPrice-maxPrice\". For example, \"10-20\" means that tutors charge from 10 to 20 dollars per hour."
+              },
+              {
+                "name": "tutorIsFrom",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by country of birth. Two letter country code, for example 'US', 'UA', 'GB' for the United Kingdom, 'ES' and so on.  If need to filter by multiple countries, use comma separated list, for example 'US,UA,ES'."
+              },
+              {
+                "name": "tl",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by languages they speak. Two lower-case letters language code, for example 'en', 'nl' and so on"
+              },
+              {
+                "name": "native",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by teached language is their native"
+              },
+              {
+                "name": "certified",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors that are proffefionals (or in other words, certified)"
+              },
+              {
+                "name": "searchtext",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by any term or pharse in their profile"
+              },
+              {
+                "name": "day",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by day of week availability."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Filter tutors by time availability in UTC. Possible values are: \"MORNING\" - 6am-9am, \"MORNING_LATE\" - 9am-12pm, \"AFTERNOON\" - 9pm-3pm, \"AFTERNOON_LATE\" - 3pm-6pm, \"EVENING\" - 6pm-9pm, \"EVENING_LATE\" - 9pm-12am, \"NIGHT\" - 12am-3am, \"NIGHT_LATE\" - 3am-6am"
+              }
+            ]
+          },
+          "docs": "Get a list of tutors. Results are split into pages, which size is 10. If not tutors are returned suggest removing some used filters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

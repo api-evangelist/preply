@@ -1,0 +1,306 @@
+{
+  "item": [
+    {
+      "id": "fc4c84d0-02fd-4ea9-ad4a-44bf1cf6631a",
+      "name": "Chatgpt Openapi",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4fdac1a4-9c42-4d43-9b53-85f14e88bc88",
+          "name": "Get full info about specific tutor",
+          "request": {
+            "name": "Get full info about specific tutor",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "chatgpt_openapi",
+                "tutors",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) ID of the tutor"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40ba271b-99da-450b-bf2b-432cdb683ab1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "chatgpt_openapi",
+                    "tutors",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) ID of the tutor"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"data\": {\n    \"tutor\": {\n      \"id\": \"string\",\n      \"fullName\": \"string\",\n      \"headline\": \"string\",\n      \"totalLessons\": 5785,\n      \"lessonsBookedLast48h\": 5535,\n      \"responseTime\": \"string\",\n      \"videoIntro\": \"string\",\n      \"shortBio\": \"string\",\n      \"shortBioOriginal\": \"string\",\n      \"publicUrl\": \"string\",\n      \"multiLanguages\": [\n        {\n          \"value\": \"reference #/components/schemas/MultiLanguage not found in the OpenAPI spec\"\n        },\n        {\n          \"value\": \"reference #/components/schemas/MultiLanguage not found in the OpenAPI spec\"\n        }\n      ],\n      \"user\": {\n        \"profile\": {\n          \"avatarUrlHttps\": \"string\",\n          \"lastSeen\": \"string\"\n        }\n      },\n      \"countryOfBirth\": {\n        \"name\": \"string\"\n      },\n      \"numberReviews\": 5569,\n      \"averageScore\": 7862.8938706145755,\n      \"price\": {\n        \"currency\": {\n          \"code\": \"string\"\n        },\n        \"value\": 8263.189381516\n      },\n      \"availabilityRange\": {\n        \"time\": \"string\",\n        \"dow\": 1465.7751423287402\n      },\n      \"educations\": [\n        {\n          \"dates\": \"string\",\n          \"university\": \"string\",\n          \"degree\": \"string\",\n          \"degreeType\": \"string\",\n          \"tutorDocument\": {\n            \"status\": \"string\"\n          }\n        },\n        {\n          \"dates\": \"string\",\n          \"university\": \"string\",\n          \"degree\": \"string\",\n          \"degreeType\": \"string\",\n          \"tutorDocument\": {\n            \"status\": \"string\"\n          }\n        }\n      ],\n      \"workExperiences\": [\n        {\n          \"dates\": \"string\",\n          \"company\": \"string\",\n          \"position\": \"string\"\n        },\n        {\n          \"dates\": \"string\",\n          \"company\": \"string\",\n          \"position\": \"string\"\n        }\n      ],\n      \"certificates\": [\n        {\n          \"dates\": \"string\",\n          \"certificate\": \"string\",\n          \"description\": \"string\",\n          \"tutorDocument\": {\n            \"status\": \"string\"\n          }\n        },\n        {\n          \"dates\": \"string\",\n          \"certificate\": \"string\",\n          \"description\": \"string\",\n          \"tutorDocument\": {\n            \"status\": \"string\"\n          }\n        }\n      ],\n      \"reviews\": [\n        {\n          \"id\": \"string\",\n          \"score\": 1570,\n          \"content\": \"string\",\n          \"created\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"score\": 3426,\n          \"content\": \"string\",\n          \"created\": \"string\"\n        }\n      ],\n      \"recommendedTutors\": [\n        {\n          \"id\": \"string\"\n        },\n        {\n          \"id\": \"string\"\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b390ced6-85ed-45cb-88eb-fa014e841273",
+          "name": "Get a list of tutors. Results are split into pages, which size is 10. If not tutors are returned suggest removing some used filters",
+          "request": {
+            "name": "Get a list of tutors. Results are split into pages, which size is 10. If not tutors are returned suggest removing some used filters",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "chatgpt_openapi",
+                "tutors",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "subject",
+                  "value": "<string>",
+                  "description": "(Required) Filter tutors by subject. Possible options are 'english', 'spanish', 'ukrainian"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "The way to sort tutors. Possible options are 'price_highest' (expensive tutors go first), 'price_lowest' (cheap tutors go first), 'popularity' (popular tutors go first), 'reviews' (tutors with the most reviews go first), 'rating' (tutors with the highest lessons rating go first). The 'rating' value is often used to find the best tutors, thus is recommended."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<number>",
+                  "description": "Page number of the results. Default value is \"1\". To get more tutors for the same result pass \"2\" or \"3\" and so on"
+                },
+                {
+                  "disabled": false,
+                  "key": "priceRange",
+                  "value": "<string>",
+                  "description": "Price range filter for tutors. The format is \"minPrice-maxPrice\". For example, \"10-20\" means that tutors charge from 10 to 20 dollars per hour."
+                },
+                {
+                  "disabled": false,
+                  "key": "tutorIsFrom",
+                  "value": "<string>",
+                  "description": "Filter tutors by country of birth. Two letter country code, for example 'US', 'UA', 'GB' for the United Kingdom, 'ES' and so on.  If need to filter by multiple countries, use comma separated list, for example 'US,UA,ES'."
+                },
+                {
+                  "disabled": false,
+                  "key": "tl",
+                  "value": "<string>",
+                  "description": "Filter tutors by languages they speak. Two lower-case letters language code, for example 'en', 'nl' and so on"
+                },
+                {
+                  "disabled": false,
+                  "key": "native",
+                  "value": "<string>",
+                  "description": "Filter tutors by teached language is their native"
+                },
+                {
+                  "disabled": false,
+                  "key": "certified",
+                  "value": "<string>",
+                  "description": "Filter tutors that are proffefionals (or in other words, certified)"
+                },
+                {
+                  "disabled": false,
+                  "key": "searchtext",
+                  "value": "<string>",
+                  "description": "Filter tutors by any term or pharse in their profile"
+                },
+                {
+                  "disabled": false,
+                  "key": "day",
+                  "value": "<string>",
+                  "description": "Filter tutors by day of week availability."
+                },
+                {
+                  "disabled": false,
+                  "key": "time",
+                  "value": "<string>",
+                  "description": "Filter tutors by time availability in UTC. Possible values are: \"MORNING\" - 6am-9am, \"MORNING_LATE\" - 9am-12pm, \"AFTERNOON\" - 9pm-3pm, \"AFTERNOON_LATE\" - 3pm-6pm, \"EVENING\" - 6pm-9pm, \"EVENING_LATE\" - 9pm-12am, \"NIGHT\" - 12am-3am, \"NIGHT_LATE\" - 3am-6am"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c3a7e12e-8c2c-432e-8ca3-d6d35f3d78f4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "chatgpt_openapi",
+                    "tutors",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "subject",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "priceRange",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tutorIsFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "native",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "certified",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "searchtext",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"data\": {\n    \"allTutors\": {\n      \"totalResults\": 6806.806692216221,\n      \"tutors\": [\n        {\n          \"id\": 5225.29188340348,\n          \"countryOfBirth\": {\n            \"name\": \"string\"\n          },\n          \"totalLessons\": 9221.470933522442,\n          \"averageScore\": 6232.582824212934,\n          \"publicUrl\": \"string\",\n          \"price\": {\n            \"value\": 6578.303349254739,\n            \"currency\": {\n              \"code\": \"string\"\n            }\n          },\n          \"user\": {\n            \"fullName\": \"string\",\n            \"profile\": {\n              \"avatarUrlHttps\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 8040.683624570038,\n          \"countryOfBirth\": {\n            \"name\": \"string\"\n          },\n          \"totalLessons\": 4518.838671688335,\n          \"averageScore\": 7404.226813772638,\n          \"publicUrl\": \"string\",\n          \"price\": {\n            \"value\": 9907.666825504397,\n            \"currency\": {\n              \"code\": \"string\"\n            }\n          },\n          \"user\": {\n            \"fullName\": \"string\",\n            \"profile\": {\n              \"avatarUrlHttps\": \"string\"\n            }\n          }\n        }\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://preply.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "57a499ab-3af4-4840-b5b1-2b78b22ff6cd",
+    "name": "Preply plugin Chatgpt Openapi API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Plugin for finding best tutors for you and managing your lessons.",
+      "type": "text/plain"
+    }
+  }
+}
