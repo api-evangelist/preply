@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
   title: Preply plugin Chatgpt Openapi API
   description: Plugin for finding best tutors for you and managing your lessons.
@@ -31,7 +31,7 @@ paths:
   /api/chatgpt_openapi/tutors/:
     get:
       operationId: searching-tutors
-      summary: Get a list of tutors. Results are split into pages, which size is 10. If not tutors are returned suggest removing some used filters
+      summary: Get a list of tutors.
       parameters:
       - name: subject
         in: query
@@ -139,12 +139,6 @@ paths:
       - Chatgpt Openapi
 components:
   schemas:
-    User:
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-          description: User profile information
     Review:
       type: object
       properties:
@@ -160,24 +154,6 @@ components:
         created:
           type: string
           description: Creation timestamp of the review
-    Education:
-      type: object
-      properties:
-        dates:
-          type: string
-          description: Education dates
-        university:
-          type: string
-          description: University name
-        degree:
-          type: string
-          description: Degree obtained
-        degreeType:
-          type: string
-          description: Type of the degree
-        tutorDocument:
-          $ref: '#/components/schemas/TutorDocument'
-          description: Tutor document information
     Country:
       type: object
       properties:
@@ -199,124 +175,6 @@ components:
         tutorDocument:
           $ref: '#/components/schemas/TutorDocument'
           description: Tutor document information
-    AvailabilityRange:
-      type: object
-      properties:
-        time:
-          type: string
-          description: time of the day by hours, like 08:00:00, 09:00:00
-        dow:
-          type: number
-          description: Day of the week, 0 is Monday, 1 is Tuesday etc.
-    tutorsResponse:
-      type: object
-      properties:
-        errors:
-          type: array
-          description: List of errors that happened during request
-          items:
-            type: string
-            description: Error message
-        data:
-          type: object
-          properties:
-            allTutors:
-              type: object
-              properties:
-                totalResults:
-                  type: number
-                  description: Total number of tutors for user query
-                tutors:
-                  type: array
-                  description: List of tutors
-                  items:
-                    type: object
-                    description: Tutor
-                    properties:
-                      id:
-                        type: number
-                        description: Tutor id
-                      countryOfBirth:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: Country of birth
-                      totalLessons:
-                        type: number
-                        description: Total lessons taught
-                      averageScore:
-                        type: number
-                        description: Tutor rating
-                      publicUrl:
-                        type: string
-                        description: Public url
-                      price:
-                        type: object
-                        properties:
-                          value:
-                            type: number
-                            description: Amount
-                          currency:
-                            type: object
-                            properties:
-                              code:
-                                type: string
-                                description: Currency code
-                      user:
-                        type: object
-                        properties:
-                          fullName:
-                            type: string
-                            description: Full name
-                          profile:
-                            type: object
-                            properties:
-                              avatarUrlHttps:
-                                type: string
-                                description: Avatar url
-    Price:
-      type: object
-      properties:
-        currency:
-          $ref: '#/components/schemas/Currency'
-          description: Currency information
-        value:
-          type: number
-          description: Price value
-    WorkExperience:
-      type: object
-      properties:
-        dates:
-          type: string
-          description: Work experience dates
-        company:
-          type: string
-          description: Company name
-        position:
-          type: string
-          description: Position held
-    TutorDocument:
-      type: object
-      properties:
-        status:
-          type: string
-          description: Status of the tutor document
-    Profile:
-      type: object
-      properties:
-        avatarUrlHttps:
-          type: string
-          description: URL of the tutor's avatar
-        lastSeen:
-          type: string
-          description: Last seen timestamp of the user
-    Currency:
-      type: object
-      properties:
-        code:
-          type: string
-          description: Currency code
     tutorByIDResponse:
       type: object
       properties:
@@ -411,9 +269,151 @@ components:
                   description: Similart tutors to the current one
                   items:
                     $ref: '#/components/schemas/RecommendedTutor'
+    Education:
+      type: object
+      properties:
+        dates:
+          type: string
+          description: Education dates
+        university:
+          type: string
+          description: University name
+        degree:
+          type: string
+          description: Degree obtained
+        degreeType:
+          type: string
+          description: Type of the degree
+        tutorDocument:
+          $ref: '#/components/schemas/TutorDocument'
+          description: Tutor document information
+    Profile:
+      type: object
+      properties:
+        avatarUrlHttps:
+          type: string
+          description: URL of the tutor's avatar
+        lastSeen:
+          type: string
+          description: Last seen timestamp of the user
+    Currency:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Currency code
+    TutorDocument:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Status of the tutor document
+    Price:
+      type: object
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'
+          description: Currency information
+        value:
+          type: number
+          description: Price value
+    WorkExperience:
+      type: object
+      properties:
+        dates:
+          type: string
+          description: Work experience dates
+        company:
+          type: string
+          description: Company name
+        position:
+          type: string
+          description: Position held
     RecommendedTutor:
       type: object
       properties:
         id:
           type: string
           description: ID of the recommended tutor
+    AvailabilityRange:
+      type: object
+      properties:
+        time:
+          type: string
+          description: time of the day by hours, like 08:00:00, 09:00:00
+        dow:
+          type: number
+          description: Day of the week, 0 is Monday, 1 is Tuesday etc.
+    tutorsResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          description: List of errors that happened during request
+          items:
+            type: string
+            description: Error message
+        data:
+          type: object
+          properties:
+            allTutors:
+              type: object
+              properties:
+                totalResults:
+                  type: number
+                  description: Total number of tutors for user query
+                tutors:
+                  type: array
+                  description: List of tutors
+                  items:
+                    type: object
+                    description: Tutor
+                    properties:
+                      id:
+                        type: number
+                        description: Tutor id
+                      countryOfBirth:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            description: Country of birth
+                      totalLessons:
+                        type: number
+                        description: Total lessons taught
+                      averageScore:
+                        type: number
+                        description: Tutor rating
+                      publicUrl:
+                        type: string
+                        description: Public url
+                      price:
+                        type: object
+                        properties:
+                          value:
+                            type: number
+                            description: Amount
+                          currency:
+                            type: object
+                            properties:
+                              code:
+                                type: string
+                                description: Currency code
+                      user:
+                        type: object
+                        properties:
+                          fullName:
+                            type: string
+                            description: Full name
+                          profile:
+                            type: object
+                            properties:
+                              avatarUrlHttps:
+                                type: string
+                                description: Avatar url
+    User:
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+          description: User profile information
