@@ -139,6 +139,21 @@ paths:
       - Chatgpt Openapi
 components:
   schemas:
+    RecommendedTutor:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID of the recommended tutor
+    AvailabilityRange:
+      type: object
+      properties:
+        time:
+          type: string
+          description: time of the day by hours, like 08:00:00, 09:00:00
+        dow:
+          type: number
+          description: Day of the week, 0 is Monday, 1 is Tuesday etc.
     Review:
       type: object
       properties:
@@ -154,27 +169,15 @@ components:
         created:
           type: string
           description: Creation timestamp of the review
-    Country:
+    Profile:
       type: object
       properties:
-        name:
+        avatarUrlHttps:
           type: string
-          description: Name of the country
-    Certificate:
-      type: object
-      properties:
-        dates:
+          description: URL of the tutor's avatar
+        lastSeen:
           type: string
-          description: Certificate dates
-        certificate:
-          type: string
-          description: Certificate name
-        description:
-          type: string
-          description: Certificate description
-        tutorDocument:
-          $ref: '#/components/schemas/TutorDocument'
-          description: Tutor document information
+          description: Last seen timestamp of the user
     tutorByIDResponse:
       type: object
       properties:
@@ -287,15 +290,15 @@ components:
         tutorDocument:
           $ref: '#/components/schemas/TutorDocument'
           description: Tutor document information
-    Profile:
+    Price:
       type: object
       properties:
-        avatarUrlHttps:
-          type: string
-          description: URL of the tutor's avatar
-        lastSeen:
-          type: string
-          description: Last seen timestamp of the user
+        currency:
+          $ref: '#/components/schemas/Currency'
+          description: Currency information
+        value:
+          type: number
+          description: Price value
     Currency:
       type: object
       properties:
@@ -308,15 +311,33 @@ components:
         status:
           type: string
           description: Status of the tutor document
-    Price:
+    Country:
       type: object
       properties:
-        currency:
-          $ref: '#/components/schemas/Currency'
-          description: Currency information
-        value:
-          type: number
-          description: Price value
+        name:
+          type: string
+          description: Name of the country
+    Certificate:
+      type: object
+      properties:
+        dates:
+          type: string
+          description: Certificate dates
+        certificate:
+          type: string
+          description: Certificate name
+        description:
+          type: string
+          description: Certificate description
+        tutorDocument:
+          $ref: '#/components/schemas/TutorDocument'
+          description: Tutor document information
+    User:
+      type: object
+      properties:
+        profile:
+          $ref: '#/components/schemas/Profile'
+          description: User profile information
     WorkExperience:
       type: object
       properties:
@@ -329,21 +350,6 @@ components:
         position:
           type: string
           description: Position held
-    RecommendedTutor:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ID of the recommended tutor
-    AvailabilityRange:
-      type: object
-      properties:
-        time:
-          type: string
-          description: time of the day by hours, like 08:00:00, 09:00:00
-        dow:
-          type: number
-          description: Day of the week, 0 is Monday, 1 is Tuesday etc.
     tutorsResponse:
       type: object
       properties:
@@ -411,9 +417,3 @@ components:
                               avatarUrlHttps:
                                 type: string
                                 description: Avatar url
-    User:
-      type: object
-      properties:
-        profile:
-          $ref: '#/components/schemas/Profile'
-          description: User profile information
