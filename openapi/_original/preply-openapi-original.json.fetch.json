@@ -1,0 +1,12 @@
+{
+ "url": "https://preply.com/openapi.json",
+ "requested_url": "https://preply.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 10637,
+ "sha256": "f6577b67fa4b5dc222b817c7c7a0d88224e4b918deb2567aa1546d4535d81b2b",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
