@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "preply",
+    "captured_at": "2026-10-11T191642",
+    "source_url": "https://preply.com",
+    "source_type": "Website",
+    "file": "preply-2026-10-11T191642.png",
+    "bytes": 194663,
+    "capture": "playwright-local"
+  }
+]
